@@ -7,18 +7,80 @@
     <body>
         <p id="notaMedia">Nota Media:</p>
         <script>
-            let alumnos=[{nombreAlumno:"Maria",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Ruben",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Pablo",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Marcos",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Juan",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Clara",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Pilar",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Sara",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Nerea",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Julian",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Marcos",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Alfredo",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Victoria",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Raul",notaAlumno:Math.round(Math. random()*10)},{nombreAlumno:"Tomas",notaAlumno:Math.round(Math. random()*10)},];
+            let alumnos=[
+                {
+                    nombreAlumno:"Maria",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Ruben",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Pablo",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Marcos",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Juan",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Clara",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Pilar",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Sara",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Nerea",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Julian",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Marcos",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Alfredo",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Victoria",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Raul",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+                {
+                    nombreAlumno:"Tomas",
+                    notaAlumno:Math.round(Math. random()*10),
+                },
+            ];
+
             let nota=0;
             console.table(alumnos)
             function muestraAlumnos(){
                 let alum="";
                 for(let i=0;i<alumnos.length;i++){
                     alum+=i+" Nombre: "+alumnos[i].nombreAlumno+"\nNota: "+alumnos[i].notaAlumno+"\n"
-                     
                 }
                 alert(alum)
 
             }
+
             function calculaMedia(){
                 let total=0;
                 for(let i=0;i<alumnos.length;i++){
@@ -26,6 +88,7 @@
                 }
                 return (total/alumnos.length).toFixed(2);
             }
+
             function cambiaNotas(){
                 let notaNueva=0;
                 if(window.confirm("Desea cambiar alguna nota?")){
@@ -36,16 +99,11 @@
                             alumnos[i].notaAlumno=notaNueva;
                             alert("Nombre Alumno: "+alumnos[i].nombreAlumno+"\nNota Alumno: "+alumnos[i].notaAlumno)
                         }
-                        else{
-                            
-                        }
                     }
-                }else{
-
                 }
-
                 
             }
+
             function addAlumno(){
                 let nombreNuevo=""
                 if(window.confirm("Desea añadir un nuevo alumno?")){
@@ -55,11 +113,9 @@
                     alumnos.push({nombreAlumno:nombreNuevo,notaAlumno:Math.round(Math. random()*10)})
                     alert(nombreNuevo+" ha sido añadido")
                     }
-                else{
-                    
-                }
                 console.table(alumnos)
             }
+
             function deleteAlumno(){
                 if(window.confirm("Desea eliminar algún alumno?")){
                     let numAlumABorrar=0;
@@ -69,18 +125,13 @@
                     if(window.confirm("Nombre Alumno: "+alumnos[numAlumABorrar].nombreAlumno+"\nNota Alumno: "+alumnos[numAlumABorrar].notaAlumno+"\nDesea eliminar este alumno?")){
                         alert("El alumno "+alumnos[numAlumABorrar].nombreAlumno+" ha sido borrado")
                         alumnos.splice(numAlumABorrar, 1); 
-                        
                     }
-                    else{
-                    }    
-                
-                console.table(alumnos)
-                }else{
-
                 }
 
-                
+                console.table(alumnos);
+
             }
+
             function introduceNotas(){
                 if(window.confirm("Desea introducir las notas de los alumnos?")){
                     let i=0;
@@ -89,23 +140,22 @@
                         alumnos[i].notaAlumno=nota;
                         i++;
                     }while((i<alumnos.length)&&(nota>=1)&&nota<=10);
-                    console.table(alumnos)
-    
-                }else{
+
+                    console.table(alumnos);
 
                 }
-                
             }
+
             //Funcionalidad 2
-            addAlumno()
+            addAlumno();
             //Funcionalidad 3
-            deleteAlumno()
+            deleteAlumno();
             introduceNotas();
             //Funcionalidad 1
-            cambiaNotas()
-            console.table(alumnos)
+            cambiaNotas();
+            console.table(alumnos);
 
-            document.getElementById("notaMedia").innerHTML+=calculaMedia()
+            document.getElementById("notaMedia").innerHTML+=calculaMedia();
         </script>  
     </body>
 </html>
