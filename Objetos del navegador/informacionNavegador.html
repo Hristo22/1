@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <p id="navegador"></p>
+        <script>
+            let texto="";
+            texto+="<br/>CodeName: "+navigator.appCodeName;
+            texto+="<br/>CodeName: "+navigator.appName;
+            texto+="<br/>CodeName: "+navigator.appVersion;
+            texto+="<br/>CodeName: "+navigator.permissions;
+            texto+="<br/>CodeName: "+navigator.geolocation;
+            texto+="<br/>CodeName: "+navigator.plugins;
+            texto+="<br/>CodeName: "+navigator.product;
+            document.getElementById("navegador").innerHTML=texto;
+            alert("Java activado: "+navigator.javaEnabled());
+        </script>
+    </body>
+</html>

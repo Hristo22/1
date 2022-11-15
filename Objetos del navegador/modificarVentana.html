@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <header></header>
+    </head>
+    <body>
+        <p id="ventana"></p>
+        <script>
+            window.name="Mi ventana";
+            let texto = "";
+            texto += "<br/>Nombre: " + window.name;
+            texto += "<br/>Ancho externo: " + window.outerWidth;
+            texto += "<br/>Largo externo: " + window.outerHeight;
+            texto += "<br/>Ancho interno: " + window.innerWidth;
+            texto += "<br/>Largo interno: " + window.innerHeight;
+            texto += "<br/>Posicion X: " + window.screenX;
+            texto += "<br/>Posicion Y: " + window.screenY;
+
+            document.getElementById("ventana").innerHTML=texto;
+            let miVentana;
+
+            function crearVentana() {
+                miVentana=window.open("http://www.google.es","","width=500,height=200");
+            }
+            function cerrarVentana() {
+                miVentana=window.close;
+            }
+            function redimensiona() {
+                miVentana=window.resizeBy(700,400);
+            }
+            function moverVentana() {
+                miVentana=window.moveBy(30,30);
+            }
+            function enfocar() {
+                miVentana=window.focus();
+            }
+            function imprimir() {
+                print();
+                miVentana = window.print();
+            }
+
+        </script>
+
+        <button onclick="crearVentana()">Crear ventana</button>
+        <button onclick="moverVentana()">Mover ventana</button>
+        <button onclick="cerrarVentana()">Cerrar ventana</button>
+        <button onclick="redimensiona()">Redimensionar</button>
+        <button onclick="enfocar()">Enfocar</button>
+    </body>
+</html>

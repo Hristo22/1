@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <p id="reloj"></p>
+        <script>
+            let int=setInterval(reloj, 1000);
+            function reloj() {
+                let fecha=new Date(); // Fecha actual
+                document.getElementById("reloj").innerHTML=fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
+            }
+        </script>
+        <button onclick="clearTimeout(int)">Cancelar reloj</button>
+    </body>
+</html>

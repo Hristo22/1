@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            let miArrayNotas=[5.4,5,3,2,2.4,6,6,9];
+            // OPCION 1
+            /*
+            let miArrayAprobados=[];
+            for(let i=0; i<=miArrayNotas.length-1; i++){
+                let notas=miArrayNotas[i];
+                if(notas>=5){
+                    miArrayAprobados.push(notas);
+                }
+            }
+            */
+            
+            // OPCION 2
+            /*
+            let miArrayAprobados=miArrayNotas.filter(function(notas){
+                if(notas>=5){
+                    return true;
+                } else{
+                    return false;
+                }
+            }); 
+            */
+
+            // OPCION 3
+            /*
+            let miArrayAprobados=miArrayNotas.filter(function(notas){
+                return notas>=5
+            });
+            */
+
+            // OPCION 4
+            let miArrayAprobados=miArrayNotas.filter(notas=> notas>=5);
+
+            console.log(miArrayAprobados);
+        </script>
+    </body>
+</html>

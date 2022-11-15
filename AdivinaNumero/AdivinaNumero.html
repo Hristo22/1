@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <script>
+            numAdivinar=Math.ceil(Math.random()*100);
+            let num=Number(prompt("Introduce un numero"));
+            if(num!==numAdivinar){
+                alert("El numero es incorrecto");
+                while(num!=numAdivinar){
+                    if(num>numAdivinar){
+                        alert("El numero es menor");
+                        num=Number(prompt("Introduce un numero"));
+                    }
+                    if(num<numAdivinar){
+                        alert("El numero es mayor");
+                        num=Number(prompt("Introduce un numero"));
+                    }
+                }
+            }
+            if(num==numAdivinar){
+                alert("Has acertado");
+            }
+        </script>
+    </body>
+</html>

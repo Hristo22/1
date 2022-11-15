@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <script>
+            var num = "68573528467604";
+
+            //Solucion funcional
+            var posicion = num.length-1;
+            var viajeros = 0;
+
+            do{
+                viajeros = viajeros + parseInt(num.charAt(posicion));
+                posicion--;
+                viajeros = viajeros - parseInt(num.charAt(posicion));
+                posicion--;
+            }while(posicion > 0)
+
+            var emoji = "\u{1F4BC}";
+            alert("Los pasajeros que han quedado en el tren son: " + viajeros + emoji);
+        </script>
+    </body>
+</html>

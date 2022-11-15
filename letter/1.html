@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <script>
+            const letter = "Manz";
+            letter[0]; // "M"
+            console.log(letter.codePointAt(0)); // Codigo Unicode de la M
+            console.log(letter.codePointAt(0).toString(16)); // Numero hexadecimal de M
+            console.log(letter.codePointAt(3)); // "Z"
+            console.log(letter.codePointAt(4)); // Undefined
+            console.log(String.fromCodePoint(65)); // "A"
+            console.log(String.fromCodePoint(77)); // "M"
+            console.log(String.fromCodePoint(0x004d)); // "M"
+        </script>
+    </body>
+</html>

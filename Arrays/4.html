@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <script>
+            let arrayNotas=[5.2, 3.9, 6, 9.75, 7.5, 3];
+            let primerAprobado=arrayNotas.find(nota => nota > 5); // te da el valor
+            console.log(primerAprobado);
+            let posicionAprobado=arrayNotas.findIndex(nota => nota > 5); // te da la posicion
+            console.log(posicionAprobado);
+            let sumaAnotas=arrayNotas.map(nota => nota + nota * 0.1); // suma la nota en el array
+            console.log(sumaAnotas);
+            let sumaNotas=arrayNotas.reduce((total,nota) => total += nota); // suma de todas las notas
+            console.log(sumaNotas);
+            let maxNota=arrayNotas.reduce((max,nota) => nota > max ? nota:max); // mayor de todas las notas
+            console.log(maxNota);
+            let notaMedia=arrayNotas.reduce((media, nota) => media = sumaNotas/arrayNotas.length); // media de todas las notas
+            console.log(notaMedia);
+        </script>
+    </body>
+</html>

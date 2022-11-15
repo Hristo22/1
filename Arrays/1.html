@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="aqui"></p>
+        <script>
+            var txt="";
+            var txt2="";
+            var dias=['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+
+            // Opcion 1
+            dias.forEach(muestra);
+
+            function muestra(valor,indice,array){
+                txt=txt + valor + " ";
+            }
+            
+            document.getElementById("aqui").innerHTML=txt;
+
+            // Barra separadora
+            document.getElementById("aqui").innerHTML+='<br>--------<br>';
+
+            // Opcion2
+            for(var i=0; i<dias.length; i++){
+                txt2=txt2 + dias[i] + " ";
+            }
+            document.getElementById("aqui").innerHTML+=txt2;
+        </script>
+    </body>
+</html>
