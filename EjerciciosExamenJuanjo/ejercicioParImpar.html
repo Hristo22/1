@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio PAR/IMPAR</title>
+    </head>
+    <body>
+        <script>
+            //FUNCIONES
+            function parImpar(num){
+                if(num%2==1){
+                    alert("El número "+num+" es impar");
+                }else{
+                    alert("El número "+num+" es par");
+                }
+            }
+            //funciones flecha
+            let parImparFlecha=(num)=>{
+                if(num%2==0){
+                    alert(num+" es par");
+                }else{
+                    alert(num+" es impar");
+                }
+            }
+            let parImparFlecha2=(num)=>{
+                if(!num){
+                    alert("es par");
+                }else{
+                    alert("es impar");
+                }
+            }
+            //CODIGO
+           
+
+            let numIntroducido=0;
+            do{
+                numIntroducido=Number(prompt("Introduce un número:",""));
+            }while(isNaN(numIntroducido));
+
+            console.log(numIntroducido);
+
+            parImparFlecha(numIntroducido);
+            parImparFlecha2(numIntroducido%2);
+            parImpar(numIntroducido);
+            let resultado=((numIntroducido)=>numIntroducido%2==0?numIntroducido+=" es par":numIntroducido+=" es impar");
+            alert(resultado(numIntroducido));
+            numIntroducido=numIntroducido%2? numIntroducido+=" es impar":numIntroducido+=" es par";
+            alert(numIntroducido);
+        </script>                
+    </body>
+</html>
