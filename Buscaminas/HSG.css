@@ -1,17 +1,21 @@
-td {
+.colorCeldas {
+    background-color: blue;
+}
+
+.tamañoCeldas {
     width: 1.5em;
     height: 1.5em;
 }
-
+/*
 table tr td:hover {
     background: color #018abb;
 }
+*/
 
 
 
 
-
-
+/* ------------------------------------------------------ */
 /*
 nav {
     margin:auto;
