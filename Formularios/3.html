@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario Clase</title>
+        <script src="formulario3.js"></script>
+    </head>
+    <!--
+        1)
+        Formulario Ejercicio1
+
+        2)
+        Nombre:obligatorio
+        mensaje:2<x<500
+        color por defecto:oscuro
+        dias:al menos 2
+        por defecto:lunes
+        hacer click:google.com
+
+        3)
+        validacion HTML
+        validacion js
+        validacion checkValidity validity.xxxxxx
+
+        4)
+        checkbox(total)		Seleccionar todos los dias y que despues se quede el lunes puesto
+    -->
+    <body align="center">
+        <form action="procesar.php" method="post" id="miFormulario">
+                <fieldset>
+                    <legend align="left">Datos personales</legend>
+                        <p>Introduce tu nombre: <input type="text" name="nombre" id="nombre"/></p>
+                        <p>Mensaje
+                        <input type="text" name="text" name="telefono" rows="6" cols="50"></textarea></p>
+                    </tr>
+                </fieldset>
+            <div align="center">
+                
+                    <p>Elige un color:<br>
+                    Rojo<input type="radio" name="color" id="rojo"/><br>
+                    Verde<input type="radio" name="color" id="verde"/><br>
+                    Azul<input type="radio" name="color" id="azul"/><br>
+                    Oscuro<input type="radio" name="color" id="oscuro" checked/></p>
+                
+                    <p>Seleccione una asignatura
+                        <select name="asignaturas">
+                            <option value="1">DWES</option>
+                            <option value="2">DIW</option>
+                        </select>
+                    </p>
+                
+                    <p>Selecciona los dias con disponibilidad<br>
+                        <input type="checkbox" name="color" id="rojo" checked/>Lunes<br>
+                        <input type="checkbox" name="color" id="verde"/>Martes<br>
+                        <input type="checkbox" name="color" id="azul"/>Miercoles<br>
+                        <input type="checkbox" name="color" id="azul"/>Jueves<br>
+                        <input type="checkbox" name="color" id="azul"/>Viernes<br>
+                    </p>
+
+                    <p>Selecciona el dia preferente 
+                        <select name="diaPreferente">
+                            <option value="1">Lunes</option>
+                            <option value="2">Martes</option>
+                            <option value="3">Miercoles</option>
+                            <option value="4">Jueves</option>
+                            <option value="5">Viernes</option>
+                        </select>
+                    </p>
+                
+            </div>
+            <p>
+                <input type="submit" name="Enviar" id="Haz click para enviar informacion"/>
+                <input type="reset" name="Borrar" id="Borrar" value="Comenzar a rellenar de nuevo"/>
+                <button name="enlaceGoogle" onclick="enlace()">Haz click sobre mi</button>
+            </p>
+        </form>
+    </body>
+</html>

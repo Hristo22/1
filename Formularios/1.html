@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario Clase</title>
+        <script src="formulario.js"></script>
+        <style>
+            .error {
+                border: solid 3px #FF0000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulario</h1>
+        <form action="procesar.php" method="post" id="miFormulario">
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" name="nombre" id="nombre"/></td>
+                </tr>
+                <tr>
+                    <td>Telefono:</td>
+                    <td><input type="text" name="telefono" id="telefono"/></td>
+                </tr>
+                <tr>
+                    <td>Fecha de nacimiento:</td>
+                    <td>
+                        <input type="text" name="dia" size="2" id="dia"/>
+                        <input type="text" name="mes" size="2" id="mes"/>
+                        <input type="text" name="anio" size="2" id="anio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sexo:</td>
+                    <td><input type="radio" name="sexo" id="H" checked/>
+                    <input type="radio" name="sexo" id="M"/></td>
+                </tr>
+                <tr>
+                    <td>Mayor de 18:</td>
+                    <td><input type="checkbox" name="mayor" id="mayor" checked/></td>
+                </tr>
+            </table>
+            <p>
+                <input type="submit" name="Enviar" id="Enviar"/>
+                <input type="reset" name="Borrar" id="Borrar" value="Borrar"/>
+            </p>
+        </form>
+    </body>
+</html>

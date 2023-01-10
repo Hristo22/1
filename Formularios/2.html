@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            window.onload=iniciar;
+
+            function iniciar() {
+                document.getElementById("enviar"),addEventListener("click", validaNombre);
+            }
+
+            function validaNombre() {
+                /*
+                let elemento=document.getElementById("nombre");
+                if(!elemento.checkValidity()) {
+                    error(elemento);
+                    return false;
+                }
+                return true;
+                */
+                let elemento=document.getElementById("nombre");
+                if(!elemento.checkValidity()) {
+                    if(elemento.calidity.valueMissing) {
+                        error2(elemento, "Debe introducir un nombre");
+                    }
+                    if(elemento.calidity.valueMissing) {
+                        error2(elemento, "El nombre debe tener ciertos paramentros");
+                    }
+                }
+            }
+
+            function validaEdad() {
+                let elemento=document.getElementById("edad");
+                if(!elemento.checkValidity()) {
+                    error(elemento);
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>

@@ -1,11 +1,13 @@
 .colorCeldas {
     background-color: blue;
-}
-
-.tamañoCeldas {
     width: 1.5em;
     height: 1.5em;
 }
+
+.miDiv {
+    margin-left: 37.5%;
+}
+
 /*
 table tr td:hover {
     background: color #018abb;

@@ -1,18 +1,19 @@
 window.addEventListener("load",generarTableroJS);
 
-function generarTableroJS() {
-    let tamaño=prompt("Dime el tamaño del tablero");
+let tamano;
+let miTabla;
+let filas;
+let columnas;
 
-    for(let i=0; i<tamaño; i++) {
-        let miTabla=document.createElement("table");
-        miTabla.setAttribute("class","tamañoCeldas");
-        let filas=document.createElement("tr");
-        filas.setAttribute("class","colorCeldas");
-        let columnas;
-        for(let i=0; i<tamaño; i++) {    
-            columnas=document.createElement("td");
+function generarTableroJS() {
+    tamano=prompt("Dime el tamaño del tablero");
+    miTabla=document.createElement("table");
+
+    for(let i=0; i<tamano; i++) {
+        filas=document.createElement("tr");
+        for(let j=0; j<tamano; j++) {    
+            crearCasillero(filas,i,j);
         }
-        filas.appendChild(columnas);
         miTabla.appendChild(filas);
     }
     let contenido=document.getElementById("miDiv");
@@ -20,13 +21,37 @@ function generarTableroJS() {
 };
 
 function numeroAleatorio() {
-
+    let num=getRandomInt(3);
+    return num;
 };
 
 function colocarBombasTableroJS() {
+    let i=getRandomInt(tamano);
+    let j=getRandomInt(tamano);
 
+    for(let a=0; a<tamano/2; a++) {
+        if(casilla[i][j]==null) {
+            casilla[i][j].innerHTML()="💣";
+        }
+    };
 };
 
+/*
 function dibujarTableroHTML() {
 
 };
+*/
+
+function crearCasillero(filas, i, j) {
+    let casilla=document.createElement("td");
+    casilla.setAttribute("id",`idCelda_${i}_${j}`);
+    casilla.setAttribute("class","colorCeldas");
+    casilla.setAttribute("id",10*i+j);
+    casilla.setAttribute("onclick", "clickar(id)");
+    filas.appendChild(casilla);
+}
+
+function clickar(id) {
+    alert(id);
+    id.show();
+}
