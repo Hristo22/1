@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!--
+            En primer lugar, comprobaremos si el navegador soporta Storage y mostraremos un mensaje con el nombre del usuario
+            si este se ha logueado en la pagina, diferenciando si es su primera visita o ya ha entrado en mas ocasiones.
+            Utilizaremos una funcion para llevar el control de las veces que el usuario ha accedido a la pagina. Crearemos dos funciones
+            para incrementar y decrementar el valor del contador anterior. Finalmente crearemos otra funcion para hacer logout y
+            restablecer los valores anteriores.
+        -->
+        <p id="texto"></p>
+        <button id="incremento">Incremento</button>
+        <button id="decremento">Decremento</button>
+        <button id="restablecer">Restablecer</button>
+
+        <script>
+            if(typeof(Storage) !== "undefined") {
+                alert("El navegador soporta webstorage");
+            } else {
+                alert("El navegador NO soporta webstorage");
+            }
+
+            if(localStorage!=null) {
+                login();
+            }
+
+            function login() {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("texto").innerHTML = "Usted ha logueado " + localStorage.clickcount + " veces";
+            }
+
+            function incrementar() {
+
+            }
+
+            function decrementar() {
+
+            }
+
+            function logout() {
+                if(getElementById("restablecer").clicked) {
+                    localStorage.clickcount = 0;
+                }
+            }
+/*
+            window.onload=inicio()
+            let nuevo=true
+            function inicio(){
+                // checkSoporta()
+                checkAntiguedad()
+                updateVeces()
+                document.getElementById("logOut").addEventListener("click",logOut)
+                document.getElementById("signUp").addEventListener("click",newUser)
+                document.getElementById("mas").addEventListener("click",aumentarVeces)
+                document.getElementById("menos").addEventListener("click",disminuirVeces)
+            }
+            
+            document.getElementById("logOut").addEventListener("click",logOut)
+*/
+        </script>
+    </body>
+</html>
