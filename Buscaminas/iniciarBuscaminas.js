@@ -9,13 +9,16 @@ function generarTableroJS() {
     tamano=prompt("Dime el tamaño del tablero");
     miTabla=document.createElement("table");
 
-    for(let i=0; i<tamano; i++) {
-        filas=document.createElement("tr");
-        for(let j=0; j<tamano; j++) {    
-            crearCasillero(filas,i,j);
+    //function dibujarTableroHTML() {
+        for(let i=0; i<tamano; i++) {
+            filas=document.createElement("tr");
+            for(let j=0; j<tamano; j++) {
+                crearCasillero(filas,i,j);
+            }
+            miTabla.appendChild(filas);
         }
-        miTabla.appendChild(filas);
-    }
+    //}
+
     let contenido=document.getElementById("miDiv");
     contenido.appendChild(miTabla);
 };
@@ -35,12 +38,6 @@ function colocarBombasTableroJS() {
         }
     };
 };
-
-/*
-function dibujarTableroHTML() {
-
-};
-*/
 
 function crearCasillero(filas, i, j) {
     let casilla=document.createElement("td");
