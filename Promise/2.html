@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!-- HTML con div y boton -->
+        <div id="miDiv">
+            <button id="miBoton">Pulsame</button>
+        </div>
+        <script>
+            let boton=document.getElementById("miBoton").addEventListener("click", probarPromise);
+            let miDiv=document.getElementById("miDiv");
+            let thisContador=0;
+            // function promise
+            function probarPromise() {
+                thisContador++;
+                alert(thisContador);
+            }
+
+            // construir promesa
+            const promise = new Promise((resolve,reject)=>
+            {
+                setTimeout( function() {
+                    resolve(thisContador, Math.random() * 4000 + 1000);
+                });
+            });
+
+            // Insertar literales en su funcion
+            miDiv.insertAdjacentHTML("beforeend", "hola");
+
+            // TERMINAR
+        </script>
+    </body>
+</html>
