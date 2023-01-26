@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+    <title></title>
         <meta charset="UTF-8"/>
     </head>
     <body>
         <!-- HTML con div y boton -->
-        <div id="miDiv">
-            <button id="miBoton">Pulsame</button>
-        </div>
+        <button id="miBoton" onclick="miFunction()">Pulsame</button>
+        <div id="miDiv"></div>
         <script>
-            let boton=document.getElementById("miBoton").addEventListener("click", probarPromise);
-            let miDiv=document.getElementById("miDiv");
-            let thisContador=0;
-            // function promise
-            function probarPromise() {
-                thisContador++;
-                alert(thisContador);
+            let cont=0;
+
+            function miFunction() {
+                let boton=document.getElementById("miBoton").addEventListener("click", probarPromise);
             }
 
-            // construir promesa
-            const promise = new Promise((resolve,reject)=>
-            {
-                setTimeout( function() {
-                    resolve(thisContador, Math.random() * 4000 + 1000);
-                });
-            });
+            // function promise
+            function probarPromise() {
+                let thisContador=++cont;
+                let miDiv=document.getElementById("miDiv");
+                miDiv.insertAdjacentHTML("beforeend", thisContador + ") Empieza el codigo sincrono <br/>");
 
-            // Insertar literales en su funcion
-            miDiv.insertAdjacentHTML("beforeend", "hola");
+                // construir promesa
+                const promise = new Promise((resolve,reject)=> {
+                    miDiv.insertAdjacentHTML("beforeend", thisContador + ") Dentro de la promesa antes del timeOut. Empieza el codigo asincrono <br/>");
 
-            // TERMINAR
+                    window.setTimeout( function() {
+                        resolve(thisContador)}, Math.random() * 4000 + 1000);
+                    })
+                
+                    promise.then(
+                        function(val) {
+                            miDiv.insertAdjacentHTML('beforeend', thisContador + ") Dentro de then.Asincronia terminado <br/>")
+                    })
+
+                    promise.catch((reason)=>{
+                        console.miDiv('Promesa no cumplida (' + reason + ' aqui');
+                    })
+                    miDiv.insertAdjacentHTML('beforeend', thisContador + ") Codigo sincrono terminado <br/>")
+            }
+            
         </script>
     </body>
 </html>
