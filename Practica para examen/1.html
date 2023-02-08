@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Lista aleatoria de autores</h1>
+        <ul id="lista"></ul>
+        <script>
+            const url='https://randomuser.me/api/?results=10';
+            let mapPersonas=new Map();
+
+            // Para ir creando los elementos de la lista
+            function createNode(element){
+                let ul=document.getElementById("lista");
+                let li=document.createElement("li");
+                li.appendChild(element)
+
+                append(ul,li)
+            }//createNode
+
+            // Para añadir "el" a "parent"
+            function append(parent,element){
+                parent.appendChild(element)
+            }//append
+
+            // Para convertir el objeto devuelto en JSON, se utiliza el metodo .json
+            fetch(url)
+            .then(response => 
+                response.json()
+            )
+            .then(response =>
+                parseImagen(response)
+            )
+            .catch(error => {
+                console.log(error);
+            });
+
+            // maps para crear el elemento de la lista con imagen y nombre
+            function parseImagen(response) {
+                console.log(response);
+                console.log(response['results']);
+                
+                for(let i=0; i<response['results'].length; i++) {
+                    mapPersonas.set(response['results'][i]['picture']['medium'],response['results'][i]['name']['first']+" "+response['results'][i]['name']['last']);
+                }
+                console.log(mapPersonas);
+
+            }
+
+            // La API ofrece un nombre para el autor y una imagen que acompaña al nombre
+            function imprimeDatos(datos) {
+                for(let [key, value] of datos) {
+                    let img=document.createElement("img");
+                    let nom=document.createTextNode(value);
+                    let span=document.createElement("span");
+
+                    img.src=key;
+                    span.appendChild(img);
+                    span.appendChild(nom);
+                    
+                    createNode(span);
+
+                }
+            }
+
+        </script>
+    </body>
+</html>
