@@ -6,7 +6,9 @@
     </head>
     <body>
         <h1>Lista aleatoria de autores</h1>
-        <ul id="lista"></ul>
+        <ul id="lista">
+
+        </ul>
         <script>
             const url='https://randomuser.me/api/?results=10';
             let mapPersonas=new Map();
@@ -15,9 +17,10 @@
             function createNode(element){
                 let ul=document.getElementById("lista");
                 let li=document.createElement("li");
-                li.appendChild(element)
+                li.appendChild(element);
 
-                append(ul,li)
+                append(ul,li);
+                
             }//createNode
 
             // Para añadir "el" a "parent"
@@ -46,6 +49,8 @@
                     mapPersonas.set(response['results'][i]['picture']['medium'],response['results'][i]['name']['first']+" "+response['results'][i]['name']['last']);
                 }
                 console.log(mapPersonas);
+
+                imprimeDatos(mapPersonas);
 
             }
 
