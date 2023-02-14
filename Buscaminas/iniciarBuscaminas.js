@@ -23,6 +23,15 @@ function generarTableroJS() {
     contenido.appendChild(miTabla);
 };
 
+function crearCasillero(filas, i, j) {
+    let casilla=document.createElement("td");
+    casilla.setAttribute("id",`idCelda_${i}_${j}`);
+    casilla.setAttribute("class","colorCeldas");
+    casilla.setAttribute("id",10*i+j);
+    casilla.setAttribute("onclick", "clickar(id)");
+    filas.appendChild(casilla);
+};
+
 function numeroAleatorio() {
     let num=getRandomInt(3);
     return num;
@@ -39,16 +48,10 @@ function colocarBombasTableroJS() {
     };
 };
 
-function crearCasillero(filas, i, j) {
-    let casilla=document.createElement("td");
-    casilla.setAttribute("id",`idCelda_${i}_${j}`);
-    casilla.setAttribute("class","colorCeldas");
-    casilla.setAttribute("id",10*i+j);
-    casilla.setAttribute("onclick", "clickar(id)");
-    filas.appendChild(casilla);
-}
-
 function clickar(id) {
     alert(id);
     id.show();
-}
+    if(id==="💣") {
+        alert("Has tocado una bomba");
+    }
+};
