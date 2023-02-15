@@ -4,6 +4,7 @@ let tamano;
 let miTabla;
 let filas;
 let columnas;
+let casilla;
 
 function generarTableroJS() {
     tamano=prompt("Dime el tamaño del tablero");
@@ -24,7 +25,7 @@ function generarTableroJS() {
 };
 
 function crearCasillero(filas, i, j) {
-    let casilla=document.createElement("td");
+    casilla=document.createElement("td");
     casilla.setAttribute("id",`idCelda_${i}_${j}`);
     casilla.setAttribute("class","colorCeldas");
     casilla.setAttribute("id",10*i+j);
@@ -43,7 +44,7 @@ function colocarBombasTableroJS() {
 
     for(let a=0; a<tamano/2; a++) {
         if(casilla[i][j]==null) {
-            casilla[i][j].innerHTML()="💣";
+            casilla[i][j].innerText="💣";
         }
     };
 };
@@ -51,7 +52,7 @@ function colocarBombasTableroJS() {
 function clickar(id) {
     alert(id);
     id.show();
-    if(id==="💣") {
+    if(document.getElementById(id)=="💣") {
         alert("Has tocado una bomba");
     }
 };
