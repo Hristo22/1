@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forEach</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <script>
+            // DEFINICION
+            // El método forEach() ejecuta la función indicada una vez por cada elemento del array.
+
+            // PARAMETROS:
+            // callback
+            // Función a ejecutar por cada elemento, que recibe tres argumentos.
+            // forEach() ejecuta la función callback una vez por cada elemento presente en el array en orden ascendente.
+            // ARGUMENTOS -> 1: Valor del elemento  2: Indice del elemento  3: Array que esta siendo recorrido
+
+            // currentValue
+            // El elemento actual siendo procesado en el array.
+
+            // index Opcional
+            // El índice del elemento actual siendo procesado en el array.
+
+            // array Opcional
+            // El vector en el que forEach() esta siendo aplicado.
+
+            // thisArg Opcional
+            // Valor que se usará como this cuando se ejecute el callback.
+
+            const array1 = ['a', 'b', 'c'];
+            array1.forEach(element => console.log(element));
+            // Expected output: "a"
+            // Expected output: "b"
+            // Expected output: "c"
+        </script>
+    </body>
+</html>

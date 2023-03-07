@@ -23,39 +23,57 @@
 
             // OPCION 1
             console.log("OPCION 1");
-            let cadena3 = "Existen muchas otras aplicaciones más cercanas a la coordinación de informaciones y acciones, o la puesta en común de conocimientos o textos dentro de grupos. La mayor parte de las wikis actuales conservan un historial de cambios que permite recuperar fácilmente cualquier estado anterior y ver qué usuario hizo todo cambio, lo cual facilita el mantenimiento conjunto y el control de usuarios nocivos.";
-            cadena3=cadena3.toUpperCase();
-            let caracteresDistintos3=new Set(cadena3.split(''));
-            let cantidadCaracteresDistintos3=caracteresDistintos3.size;
-            console.log(cantidadCaracteresDistintos3);
-            console.log(caracteresDistintos3);
+            let caracteresDistintos=new Set(cadena.split(''));
+            let cantidadCaracteresDistintos=caracteresDistintos.size;
+            console.log(cantidadCaracteresDistintos);
+            console.log(caracteresDistintos);
 
             
             // OPCION 2
             console.log("OPCION 2");
-            let cantidadCaracteresDistintos=0;
-            let caracteresDistintos=new Map();
+            let cadena2 = "Existen muchas otras aplicaciones más cercanas a la coordinación de informaciones y acciones, o la puesta en común de conocimientos o textos dentro de grupos. La mayor parte de las wikis actuales conservan un historial de cambios que permite recuperar fácilmente cualquier estado anterior y ver qué usuario hizo todo cambio, lo cual facilita el mantenimiento conjunto y el control de usuarios nocivos.";
+            cadena2=cadena2.toUpperCase();
+            let cantidadCaracteresDistintos2=0;
+            let caracteresDistintos2=new Map();
             for (let char of cadena) {
-                if (!caracteresDistintos.has(char)) {
-                    caracteresDistintos.set(char, 1);
+                if (!caracteresDistintos2.has(char)) {
+                    caracteresDistintos2.set(char, 1);
                 } else {
-                    caracteresDistintos.set(char, caracteresDistintos.get(char) + 1);
+                    caracteresDistintos2.set(char, caracteresDistintos2.get(char) + 1);
                 }
             }
-            cantidadCaracteresDistintos = caracteresDistintos.size;
-            console.log(cantidadCaracteresDistintos);
-            console.log(caracteresDistintos);
+            cantidadCaracteresDistintos2 = caracteresDistintos2.size;
+            console.log(cantidadCaracteresDistintos2);
+            console.log(caracteresDistintos2);
 
             // OPCION 3
             console.log("OPCION 3");
-            let cadena2 = "Existen muchas otras aplicaciones más cercanas a la coordinación de informaciones y acciones, o la puesta en común de conocimientos o textos dentro de grupos. La mayor parte de las wikis actuales conservan un historial de cambios que permite recuperar fácilmente cualquier estado anterior y ver qué usuario hizo todo cambio, lo cual facilita el mantenimiento conjunto y el control de usuarios nocivos.";
-            cadena2=cadena2.toUpperCase();
-            let caracteresDistintos2 = cadena2.split('').filter((value, index, self) => {
+            let cadena3 = "Existen muchas otras aplicaciones más cercanas a la coordinación de informaciones y acciones, o la puesta en común de conocimientos o textos dentro de grupos. La mayor parte de las wikis actuales conservan un historial de cambios que permite recuperar fácilmente cualquier estado anterior y ver qué usuario hizo todo cambio, lo cual facilita el mantenimiento conjunto y el control de usuarios nocivos.";
+            cadena3=cadena3.toUpperCase();
+            let caracteresDistintos3 = cadena3.split('').filter((value, index, self) => {
                 return self.indexOf(value) === index;
             });
-            let cantidadCaracteresDistintos2 = caracteresDistintos.length;
-            console.log(cantidadCaracteresDistintos);
-            
+            let cantidadCaracteresDistintos3 = caracteresDistintos3.length;
+            console.log(cantidadCaracteresDistintos3);
+
+            // Contar los caracteres que hay en los parentesis de la cadena
+            console.log("OPCION 4");
+            let cadena4 = "Existen muchas(otras aplicaciones) más cercanas a la coordinación de informaciones y acciones, o la puesta en común(de conocimientos) o textos dentro de grupos. La mayor parte de las wikis actuales conservan un historial de cambios que permite recuperar fácilmente cualquier estado anterior y ver qué usuario hizo todo cambio, lo cual facilita el mantenimiento conjunto y el control de usuarios nocivos.";
+            cadena4=cadena4.toUpperCase();
+            let caracteresParentesis=0;
+            let dentroParentesis = false;
+            for (let i = 0; i < cadena4.length; i++) {
+                const caracter = cadena4[i];
+                if (caracter === "(") {
+                    dentroParentesis = true;
+                } else if (caracter === ")") {
+                    dentroParentesis = false;
+                } else if (dentroParentesis) {
+                    caracteresParentesis++;
+                }
+            }
+
+            console.log(caracteresParentesis);
         </script>
     </body>
 </html>
