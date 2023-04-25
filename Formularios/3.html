@@ -29,8 +29,8 @@
                 <fieldset>
                     <legend align="left">Datos personales</legend>
                         <p>Introduce tu nombre: <input type="text" name="nombre" id="nombre"/></p>
-                        <p>Mensaje
-                        <input type="text" name="text" name="telefono" rows="6" cols="50"></textarea></p>
+                        <p>Mensaje</p>
+                        <textarea type="text" name="text" name="mensaje" rows="6" cols="50"></textarea>
                     </tr>
                 </fieldset>
             <div align="center">
@@ -68,9 +68,9 @@
                 
             </div>
             <p>
-                <input type="submit" name="Enviar" id="Haz click para enviar informacion"/>
+                <input type="submit" name="Enviar" id="Enviar" value="Haz click para enviar informacion"/>
                 <input type="reset" name="Borrar" id="Borrar" value="Comenzar a rellenar de nuevo"/>
-                <button name="enlaceGoogle" onclick="enlace()">Haz click sobre mi</button>
+                <button id="google" name="enlaceGoogle" onclick="enlace()">Haz click sobre mi</button>
             </p>
         </form>
     </body>
